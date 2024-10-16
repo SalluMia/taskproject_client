@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Products from "./pages/Products"; // Ensure this file exists
 import Cart from "./pages/Cart"; // Ensure this file exists
+import AddProduct from "./components/AddProduct";
 import { Toaster } from "react-hot-toast";
 import withDashboardLayout from "./hocs/withDashboardLayout"; // Ensure correct path
 import NotFound from "./components/NotFound";
@@ -13,6 +14,7 @@ import NotFound from "./components/NotFound";
 // Wrap both components with HOC
 const EnhancedProducts = withDashboardLayout(Products);
 const EnhancedCart = withDashboardLayout(Cart);
+const EnhancedProduct = withDashboardLayout(AddProduct);
 
 function App() {
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
@@ -39,6 +41,12 @@ function App() {
             <EnhancedCart />  {/* Wrap Cart with HOC */}
           </ProtectedRoute>
         } />
+
+        <Route path="/dashboard/addProduct" element={
+                <ProtectedRoute isAuthenticated={isAuthenticated}>
+                    <EnhancedProduct />  {/* Wrap Cart with HOC */}
+                </ProtectedRoute>
+                } />
 
         {/* You can add more protected routes as needed */}
         <Route path="*" element={<NotFound />} />

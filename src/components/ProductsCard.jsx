@@ -54,6 +54,9 @@ export default function ProductsCard() {
             </div>
             <hr className='my-2 h-[2px] w-full bg-gray-300 rounded-md' />
             <div className="flex justify-between items-center">
+                <div>
+                     <h1 className='italic'>Running</h1>
+                </div>
               {/* Display rating stars */}
               <div>
                 {[...Array(5)].map((_, index) => (

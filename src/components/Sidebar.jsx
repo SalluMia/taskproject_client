@@ -33,9 +33,9 @@ const Sidebar = () => {
         </li>
         <li className="mb-2">
           <Link
-            to="/dashboard/products"
+            to="/dashboard/addProduct"
             className={`flex items-center p-2 rounded-md transition duration-200
-                        ${location.pathname === '/dashboard/products' ? 'bg-[#89089F] text-white' : 'text-gray-600 hover:bg-purple-100'}`}
+                        ${location.pathname === '/dashboard/addProduct' ? 'bg-[#89089F] text-white' : 'text-gray-600 hover:bg-purple-100'}`}
           >
             <FaBoxes className="mr-2" />
             Products
